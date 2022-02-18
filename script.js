@@ -1,8 +1,13 @@
+let storedTheme = localStorage.getItem('theme');
+changeToTheme(storedTheme);
+
+
+
 console.log("java booted up!");
-changeToTheme('light');
 function changeToTheme(theme){
     document.body.setAttribute("theme", theme);
     console.log('set theme to ' + theme + '!')
+    localStorage.setItem('theme', theme)
 }
 
 const lightButton = document.getElementById('lightButton');
@@ -59,3 +64,5 @@ function setFont(font){
             console.log('+ disappear');
     } 
 }
+
+console.log(localStorage.cat)

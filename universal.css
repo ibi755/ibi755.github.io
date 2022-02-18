@@ -1,0 +1,101 @@
+/* Importing the fonts
+NOTE: second font is loading slowly
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans&display=swap');
+@import url('https://db.onlinewebfonts.com/c/2c1ce06a505728976c1d2993407312b5?family=KFGQPC+Uthmanic+Script+HAFS');
+
+
+/* The Four Themes listed will the variables that control how they appear*/
+
+
+[theme="light"] {
+    --ALPHA: white;
+    --BETA: black;
+    --OMEGA: rgb(240, 241, 243);
+    --GAMMA: rgb(0, 110, 255);
+    --transitionamount: 0%;
+}
+
+[theme="sepia"] {
+    --ALPHA: rgb(255, 247, 234);
+    --BETA: black;
+    --OMEGA: rgb(239, 226, 205)    ;
+    --GAMMA: rgb(199, 160, 98);
+    --transitionamount: 100%;
+
+}
+
+[theme="dark"] {
+    --ALPHA: rgb(52, 58, 64)    ;
+    --BETA: white;
+    --OMEGA: rgb(33, 37, 41)    ;
+    --GAMMA: rgb(117, 175, 255);
+    --transitionamount: 200%;  
+}
+
+[theme="hafs"] {
+    --ALPHA: #447058;
+    --BETA: white;
+    --OMEGA: #1a5032;
+    --GAMMA: #ff8c6f;
+    --transitionamount: 300%;
+
+}
+
+/* The basic classes on page load MOBILE */
+
+body{
+    margin: 0px;
+    background-color: var(--ALPHA);   /*👉Page background color👈*/
+    /*👉display: flex;
+    flex-direction: column;
+    align-items: center;👈*/
+    transition: background-color 200ms linear;
+    font-family: 'Open Sans';
+    color: var(--BETA);            /*👉Text Color👈*/
+    --arabicFontSize: 1.9rem
+}
+
+p{
+    margin: 0px;
+    font-family: 'Noto Sans';
+}
+
+nav{
+    height: 60px;
+    background-color: var(--OMEGA);
+    position: block;
+    top: 0;
+    width: 100%;
+    transition: background-color 200ms linear;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+blockquote {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    direction: rtl;
+    font-family: 'KFGQPC Uthmanic Script HAFS';
+    font-size: var(--arabicFontSize);
+    background-color: var(--OMEGA);
+    color: var(--BETA);
+    padding: 10px 20px 15px;
+    border-radius: 5px;
+    margin: 0px;
+    text-align: right;
+    transition: color 200ms linear, background-color 200ms linear;
+    width: fit-content;
+    justify-self: center;
+}
+
+h1{
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    margin-top: 40px;
+}
