@@ -1,3 +1,13 @@
+const collection = document.getElementsByClassName("grid");
+console.log(collection)
+for (let i = 0; i < collection.length; i++) {
+  let childCount = collection[i].childElementCount;
+  collection[i].setAttribute('style','grid-template-rows: repeat(' + Math.ceil(childCount/2) + ', 1fr)');
+  console.log('grid-template-rows: repeat(' + Math.ceil(childCount) + ', 1fr)')
+}
+
+
+
 let storedTheme = localStorage.getItem('theme');
 changeToTheme(storedTheme);
 
