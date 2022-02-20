@@ -32,7 +32,7 @@ NOTE: second font is loading slowly
 
 [theme="light"] {
     --ALPHA: white;
-    --BETA: black;
+    --BETA: rgb(68, 68, 68);
     --OMEGA: rgb(240, 241, 243);
     --GAMMA: rgb(0, 110, 255);
     --transitionamount: 0%;
@@ -40,7 +40,7 @@ NOTE: second font is loading slowly
 
 [theme="sepia"] {
     --ALPHA: rgb(255, 247, 234);
-    --BETA: black;
+    --BETA: rgb(68, 68, 68);
     --OMEGA: rgb(239, 226, 205)    ;
     --GAMMA: rgb(199, 160, 98);
     --transitionamount: 100%;
@@ -74,13 +74,16 @@ body{
     align-items: center;👈*/
     transition: background-color 200ms linear;
     color: var(--BETA);            /*👉Text Color👈*/
-    --arabicFontSize: 1.9rem
+    --arabicFontSize: 1.9rem;
+    font-family: 'Lato';
+
 }
 
 p{
     margin: 0px;
     font-family: 'Lato';
     font-size: 16px;
+    
 }
 
 nav{

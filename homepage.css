@@ -146,37 +146,36 @@ section.title{
 }
 
 div.bodySection{
-    height: 100px;
     background-color: rgb(247, 248, 250);
     display: flex;
     flex-direction: row;
     padding: 30px 15px;
-    max-width: 1200px;
+    max-width: 1150px;
     margin: 0 auto;
 }
 
 .titleSection{
 padding: 34px 16px 32px;
 margin: 0 auto;
-max-width: 1200px;
+max-width: 1160px;
 }
 
 .subjectTitle{
-color: white;
+color: rgba(255, 255, 255, 0.64)
+;
 font-size: 16px;
-font-weight: 300;
+font-weight: 700;
 }
 
 .Ajrumiyyah{
 color: white;
 font-size: 36px;
-font-weight: 700;
+font-weight: 900;
+line-height: 45px;
 }
 
 .sideBar{
-    max-width: 270px;
     width: 270px;
-    padding-left: auto;
     margin-right: 30px;
     background-color: blueviolet;
     display: none;
@@ -205,7 +204,9 @@ font-weight: 700;
     flex-direction: row;
     align-items: stretch;
     padding-bottom: 16px;
-    border-bottom: rgb(219, 219, 219) solid 1px;
+    border-bottom: rgba(33, 36, 44, 0.08)
+    solid 1px;
+    margin-bottom: 12px;
 }
 
 .unitBlockTitle img{
@@ -217,21 +218,24 @@ font-weight: 700;
 .unitBlockTitle .titleDiv{
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .next{
-    display: unset;
+    display: none;
     color: rgb(44, 90, 55);
     font-weight: 500;
     font-size: 14px;
 }
 
 .unitTitle{
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 16px;
+    color: rgb(95, 95, 95);
 }
 
 .mastery{
-    display:flex;
+    display:none;
     flex-direction: column;
     width: max-content;
     align-items: flex-end;   
@@ -243,6 +247,7 @@ font-weight: 700;
     background-color: rgb(44, 90, 55);
     margin: -16px -24px 11px -16px;
     border-radius: 5px 5px 0px 0px;
+    display: none;
 }
 
 .unitBlockContent{
@@ -262,15 +267,46 @@ font-weight: 700;
 .progress{
     width: 100%;
     height: 8px;
-    background-color: rgb(89, 161, 255)
-    ;
+    background-color: rgb(89, 161, 255)    ;
     transform: translateX(-10%);
-}s
+}
 
-@media screen and (min-width: 767px) {
-    .sideBar{
-        display: unset;
+.grid p{
+    overflow: hidden;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.grid{
+    display: grid;
+    counter-reset: test;
+    gap: 12px;
+}
+
+.grid p::before{
+    counter-increment: test;
+    content: counter(test) " ";
+    color: rgb(199, 199, 199);
+   
+}
+
+@media screen and (min-width: 550px) {
+    .grid{    
+        grid-auto-flow: column;
+        grid-template-columns: repeat(2, 1fr);
     }
+    .mastery {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 770px) {
+    .sideBar{
+        display: block;
+    }
+    
+    
   }
 @media screen and (min-width: 1200px){
     .sideBar{
