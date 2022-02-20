@@ -2,8 +2,29 @@
 NOTE: second font is loading slowly
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans&display=swap');
+
 @import url('https://db.onlinewebfonts.com/c/2c1ce06a505728976c1d2993407312b5?family=KFGQPC+Uthmanic+Script+HAFS');
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(https://cdn.kastatic.org/fonts/lato/Lato-Regular.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Lato Bold'), local('Lato-Bold'), url(https://cdn.kastatic.org/fonts/lato/Lato-Bold.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Lato Black'), local('Lato-Black'), url(https://cdn.kastatic.org/fonts/lato/Lato-Black.woff2) format('woff2');
+}
 
 
 /* The Four Themes listed will the variables that control how they appear*/
@@ -52,14 +73,14 @@ body{
     flex-direction: column;
     align-items: center;👈*/
     transition: background-color 200ms linear;
-    font-family: 'Open Sans';
     color: var(--BETA);            /*👉Text Color👈*/
     --arabicFontSize: 1.9rem
 }
 
 p{
     margin: 0px;
-    font-family: 'Noto Sans';
+    font-family: 'Lato';
+    font-size: 16px;
 }
 
 nav{
@@ -72,8 +93,6 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-
 }
 
 blockquote {
@@ -95,7 +114,7 @@ blockquote {
 }
 
 h1{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Lato';
     text-align: center;
     margin-top: 40px;
 }
