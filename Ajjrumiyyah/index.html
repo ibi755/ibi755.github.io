@@ -1,98 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Ajjrumiyyah Notes</title>
+		<link rel="stylesheet" href="../universal.css" />
+		<link rel="stylesheet" href="../homepage.css" />
+	</head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Ajjrumiyyah Notes</title>
-  <link rel="stylesheet" href="../universal.css">
-  <link rel="stylesheet" href="../homepage.css">
-</head>
+	<body style="height: 200vh">
+		<!--NAVIGATION-->
+		<nav class="beta">
+			<div class="container">
+				<div></div>
+				<button onclick="toggleDrawer()">
+					<svg
+						class="alphaText"
+						fill="currentColor"
+						viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M12.32 7.582a4.044 4.044 0 1 0 4.044 4.043 4.056 4.056 0 0 0-4.043-4.043Zm8.73 4.043c-.002.378-.03.755-.082 1.13l2.46 1.926a.586.586 0 0 1 .134.747l-2.328 4.02a.588.588 0 0 1-.715.248l-2.894-1.162a8.923 8.923 0 0 1-1.962 1.146l-.433 3.072a.603.603 0 0 1-.581.498H9.993a.607.607 0 0 1-.582-.482l-.433-3.072a8.556 8.556 0 0 1-1.962-1.147l-2.893 1.163a.589.589 0 0 1-.715-.249L1.08 15.445a.586.586 0 0 1 .133-.748l2.46-1.926a8.823 8.823 0 0 1-.082-1.146c.002-.378.03-.755.083-1.13L1.213 8.57a.586.586 0 0 1-.133-.747l2.328-4.02a.588.588 0 0 1 .715-.248l2.893 1.162A8.924 8.924 0 0 1 8.978 3.57L9.411.498A.603.603 0 0 1 9.993 0h4.656a.607.607 0 0 1 .582.482l.432 3.072A8.557 8.557 0 0 1 17.628 4.7l2.89-1.163a.588.588 0 0 1 .716.249l2.328 4.019a.586.586 0 0 1-.133.747l-2.461 1.927c.052.38.08.762.083 1.145Z"
+						></path>
+					</svg>
+				</button>
+				<div class="drawer" open>
+					<div class="toggle4 gamma">
+						<div class="activeToggle4"><div></div></div>
+						<button class="betaText" onclick="changeToTheme('black')">
+							<svg
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								></path>
+								<path fill="currentColor" d="M12 8h4v8h-4z"></path>
+							</svg>
+							Black
+						</button>
+						<button class="betaText" onclick="changeToTheme('sepia')">
+							Sepia
+						</button>
+						<button class="betaText" onclick="changeToTheme('blue')">
+							Blue
+						</button>
+						<button class="betaText" onclick="changeToTheme('green')">
+							Green
+						</button>
+					</div>
+					<div id="fonter">
+						<button id="minus" class="omegaText" onclick="incrementFont(-1)">
+							-
+						</button>
+						<span id="font" class="alphaText">3</span>
+						<button id="plus" class="omegaText" onclick="incrementFont(1)">
+							+
+						</button>
+					</div>
+					<button onclick="toggleDrawer()">
+						<svg
+							class="alphaText"
+							fill="currentColor"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M12.32 7.582a4.044 4.044 0 1 0 4.044 4.043 4.056 4.056 0 0 0-4.043-4.043Zm8.73 4.043c-.002.378-.03.755-.082 1.13l2.46 1.926a.586.586 0 0 1 .134.747l-2.328 4.02a.588.588 0 0 1-.715.248l-2.894-1.162a8.923 8.923 0 0 1-1.962 1.146l-.433 3.072a.603.603 0 0 1-.581.498H9.993a.607.607 0 0 1-.582-.482l-.433-3.072a8.556 8.556 0 0 1-1.962-1.147l-2.893 1.163a.589.589 0 0 1-.715-.249L1.08 15.445a.586.586 0 0 1 .133-.748l2.46-1.926a8.823 8.823 0 0 1-.082-1.146c.002-.378.03-.755.083-1.13L1.213 8.57a.586.586 0 0 1-.133-.747l2.328-4.02a.588.588 0 0 1 .715-.248l2.893 1.162A8.924 8.924 0 0 1 8.978 3.57L9.411.498A.603.603 0 0 1 9.993 0h4.656a.607.607 0 0 1 .582.482l.432 3.072A8.557 8.557 0 0 1 17.628 4.7l2.89-1.163a.588.588 0 0 1 .716.249l2.328 4.019a.586.586 0 0 1-.133.747l-2.461 1.927c.052.38.08.762.083 1.145Z"
+							></path>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</nav>
+		<!-- HEADER SECTION -->
+		<header class="beta">
+			<div class="container">
+				<h6 class="half alphaText">Arabic Grammar</h6>
+				<h1 class="alphaText">Ajrumiyyah and Arabic Grammar</h1>
+			</div>
+		</header>
 
-<body>
-  <nav>
-    <div class="fancySelector">
-      <div class="activeTheme"></div>
-      <button id="lightButton">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path fill="currentColor" d="M12 8h4v8h-4z"></path></svg>
-          Light
-      </button>
-      <button id="sepiaButton">Sepia</button>
-      <button id="darkButton">Dark</button>
-      <button id="hafsButton">Hafs</button>
-    </div>
-    <div id="fonter">
-      <button id="minus">-</button>
-      <span id="font" style="padding: 0px 12px;">3</span>
-      <button id="plus">+</button>
-    </div>
-  </nav>
-  <section class="title">
-    <div class="titleSection">
-      <p class="subjectTitle">Arabic Grammar</p>
-      <p class="Ajrumiyyah">Ajrumiyyah and Arabic Grammar</p>
-    </div>
-  </section>
-  <section>
-    <div class="bodySection">
-      <div class="sideBar">this is the sidebar
-      </div>
-      <div class="contentBar">
-        <div class="unitBlock">
-          <div class="unitBlockContent">
-            <div class="activeBar"></div>
-            <div class="unitBlockTitle">
-              <img src="../images/desk.jpg" alt="a desk">
-              <div class="titleDiv">
-                <p class="next">Up next for you</p>
-                <p class="unitTitle">Differentiation: Definition and Basic Derivitive Rules</p>
-              </div>
-              <div style="flex-grow: 1; "></div>
-              <div class="mastery"><p style="font-size: 14px;">0/1 Mastery Points</p>
-              <div class="progressBar">
-                <div class="progress"></div>
-              </div>
-            </div>
+		<!-- RANDOM NOTE -->
+		<aside>
+			<div class="container">
+				<p>
+					Not Feeling Ready for this? Check out
+					<a href="google.com">Arabic Basics Here</a> Arabic Basics here
+				</p>
+			</div>
+		</aside>
 
-            </div>
-            <div class="grid" style="grid-template-rows: repeat(5, 30px)">
-              <p>Babul Iraab gb gbgbg gbgbg gbgbg gbgb gbgb tgfd</p>
-              <p>Determining Nouns</p>
-              <p>And Determining Verbs</p>
-              <p>4</p>
-              <p>3erdfc</p>
-              <p>3ed</p>
-              <p>sdfxvdgcb</p>
-              <p>dgfs</p>
-            </div>
-            
-            </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-  <h1>Ajjrumiyyah Online Reference</h1>
+		<!-- MAIN CONTENT -->
+		<main>
+			<div class="bodySection container">
+				<div class="sideBar">this is the sidebar</div>
+				<div class="contentBar">
+					<div class="unitBlock">
+						<div class="unitBlockContent">
+							<div class="activeBar"></div>
+							<div class="unitBlockTitle">
+								<img src="../images/desk.jpg" alt="a desk" />
+								<div class="titleDiv">
+									<p class="next">Up next for you</p>
+									<p class="unitTitle">
+										Differentiation: Definition and Basic Derivitive Rules
+									</p>
+								</div>
+								<div style="flex-grow: 1"></div>
+								<div class="mastery">
+									<p style="font-size: 14px">0/1 Mastery Points</p>
+									<div class="progressBar">
+										<div class="progress"></div>
+									</div>
+								</div>
+							</div>
+							<div class="grid" style="grid-template-rows: repeat(5, 30px)">
+								<p>Babul Iraab gb gbgbg gbgbg gbgbg gbgb gbgb tgfd</p>
+								<p>Determining Nouns</p>
+								<p>And Determining Verbs</p>
+								<p>4</p>
+								<p>3erdfc</p>
+								<p>3ed</p>
+								<p>sdfxvdgcb</p>
+								<p>dgfs</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
 
-  <p style="max-width: 60%;">AJRUMIYYAH FANS LES GOOOOO! This is just a janky site as a reference instead of pdf. Use it if you dare. Jazakhallah to NAME for covering all the expenses is AYMAN. This project was created out of adoration of quran.com. Please don't sue me for taking you ideas and UI</p>
-<div class="contentDiv">
+		<!-- PLAYGROUND -->
+		<section>
+			<h1>This is a Heading1</h1>
+			<h2>This is a Heading2</h2>
+			<h3>This is a Heading3</h3>
+			<h4>This is a Heading4</h4>
+			<h5>This is a heading5</h5>
+			<h6>This is a heading 6</h6>
 
-<blockquote>
-  <span tooltip="a very veyr bad person with stinky breath">الكلام</span>
-  <span tooltip="testing123">بِسْمِ اللّهِ</span>
-  <span tooltip="testing123">بسم الله</span>
-  <span tooltip="testing123">بسم الله</span>
-  <span tooltip="testing123">الرحمان</span>
-  <span tooltip="testing123">بسم الله</span>
-  <span tooltip="testing123">بسم الله</span>
-  <span tooltip="testing123">بسم الله</span>
+			<p>This is a paragraph</p>
+			<div>
+				<blockquote>
+					<span tooltip="a very veyr bad person with stinky breath"
+						>الكلام</span
+					>
+					<span tooltip="testing123">بِسْمِ اللّهِ</span>
+					<span tooltip="testing123">بسم الله</span>
+					<span tooltip="testing123">بسم الله</span>
+					<span tooltip="testing123">الرحمان</span>
+					<span tooltip="testing123">بسم الله</span>
+					<span tooltip="testing123">بسم الله</span>
+					<span tooltip="testing123">بسم الله</span>
+				</blockquote>
+			</div>
+		</section>
 
-</blockquote>
+		<!-- FOOTER -->
+		<footer></footer>
 
-<p>Inshallahu Amineen Mukhaliqeen Ru</p>
-
-</div>
-<script src="../script.js"></script>
-</body>
+		<!-- SCRIPTS -->
+		<script src="../script.js"></script>
+	</body>
 </html>

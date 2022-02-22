@@ -1,123 +1,383 @@
-/* Importing the fonts
-NOTE: second font is loading slowly
-*/
+/*👉Welcome to my css for the Ajrumiyyah Learning Platform
+Below are the default styles that are used across all pages
+Each page otherwise has its own stile sheet and manual overrides👈*/
 
-
+/* UNIVERSAL FONTS */
 @import url('https://db.onlinewebfonts.com/c/2c1ce06a505728976c1d2993407312b5?family=KFGQPC+Uthmanic+Script+HAFS');
-
 @font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Lato Regular'), local('Lato-Regular'), url(https://cdn.kastatic.org/fonts/lato/Lato-Regular.woff2) format('woff2');
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Lato Regular'), local('Lato-Regular'),
+		url(https://cdn.kastatic.org/fonts/lato/Lato-Regular.woff2) format('woff2');
 }
-
 @font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Lato Bold'), local('Lato-Bold'), url(https://cdn.kastatic.org/fonts/lato/Lato-Bold.woff2) format('woff2');
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Lato Bold'), local('Lato-Bold'),
+		url(https://cdn.kastatic.org/fonts/lato/Lato-Bold.woff2) format('woff2');
 }
-
 @font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 900;
-    src: local('Lato Black'), local('Lato-Black'), url(https://cdn.kastatic.org/fonts/lato/Lato-Black.woff2) format('woff2');
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 900;
+	src: local('Lato Black'), local('Lato-Black'),
+		url(https://cdn.kastatic.org/fonts/lato/Lato-Black.woff2) format('woff2');
 }
 
-
-/* The Four Themes listed will the variables that control how they appear*/
-
-
-[theme="light"] {
-    --ALPHA: white;
-    --BETA: rgb(68, 68, 68);
-    --OMEGA: rgb(240, 241, 243);
-    --GAMMA: rgb(0, 110, 255);
-    --transitionamount: 0%;
+/* UNIVERSAL THEMES*/
+[theme='black'] {
+	--ALPHA: white;
+	--BETA: rgb(68, 68, 68);
+	--OMEGA: rgb(240, 241, 243);
+	--GAMMA: rgb(0, 110, 255);
+	--transform: 0%;
+}
+[theme='sepia'] {
+	--ALPHA: rgb(255, 247, 234);
+	--BETA: rgb(68, 68, 68);
+	--OMEGA: rgb(239, 226, 205);
+	--GAMMA: rgb(199, 160, 98);
+	--transform: 100%;
+}
+[theme='blue'] {
+	--ALPHA: rgb(52, 58, 64);
+	--BETA: white;
+	--OMEGA: rgb(33, 37, 41);
+	--GAMMA: rgb(117, 175, 255);
+	--transform: 200%;
+}
+[theme='green'] {
+	--ALPHA: #447058;
+	--BETA: white;
+	--OMEGA: #1a5032;
+	--GAMMA: #ff8c6f;
+	--transform: 300%;
 }
 
-[theme="sepia"] {
-    --ALPHA: rgb(255, 247, 234);
-    --BETA: rgb(68, 68, 68);
-    --OMEGA: rgb(239, 226, 205)    ;
-    --GAMMA: rgb(199, 160, 98);
-    --transitionamount: 100%;
-
+.alpha {
+	background-color: var(--ALPHA);
+	transition: background-color 200ms linear;
+}
+.beta {
+	background-color: var(--BETA);
+	transition: background-color 200ms linear;
+}
+.omega {
+	background-color: var(--OMEGA);
+	transition: background-color 200ms linear;
+}
+.gamma {
+	background-color: var(--GAMMA);
+	transition: background-color 200ms linear;
+}
+.alphaText {
+	color: var(--ALPHA);
+	transition: color 200ms linear;
+}
+.betaText {
+	color: var(--BETA);
+	transition: color 200ms linear;
+}
+.omegaText {
+	color: var(--OMEGA);
+	transition: color 200ms linear;
+}
+.half {
+	opacity: 50%;
 }
 
-[theme="dark"] {
-    --ALPHA: rgb(52, 58, 64)    ;
-    --BETA: white;
-    --OMEGA: rgb(33, 37, 41)    ;
-    --GAMMA: rgb(117, 175, 255);
-    --transitionamount: 200%;  
+/* The basic classes on page load */
+:root {
+	font-size: 16px;
+}
+body {
+	/*👉 DEFAULT body properties
+    display: block;
+    margin: 8px;👈*/
+	margin: 0px;
+	background-color: var(--ALPHA);
+	color: var(--BETA);
+	font-family: 'Lato';
+	transition: background-color 200ms linear, color 200ms linear;
+	--arabicFontSize: 2.2rem;
+}
+footer {
+	/*👉 DEFAULT footer styling
+    display: block;	
+    👈*/
+	cursor: unset;
+}
+header {
+	/*👉 DEFAULT header styles
+    display: block;👈*/
+	cursor: unset;
+}
+svg {
+	width: 24px;
+	height: 24px;
+}
+p {
+	/*👉 DEFAULT p styling
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;👈*/
+	margin: 0px;
+	font-family: 'Lato';
+	font-size: 16px;
+}
+nav > .container {
+	/*👉display: block;👈*/
+	height: 60px;
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-[theme="hafs"] {
-    --ALPHA: #447058;
-    --BETA: white;
-    --OMEGA: #1a5032;
-    --GAMMA: #ff8c6f;
-    --transitionamount: 300%;
-
-}
-
-/* The basic classes on page load MOBILE */
-
-body{
-    margin: 0px;
-    background-color: var(--ALPHA);   /*👉Page background color👈*/
-    /*👉display: flex;
-    flex-direction: column;
-    align-items: center;👈*/
-    transition: background-color 200ms linear;
-    color: var(--BETA);            /*👉Text Color👈*/
-    --arabicFontSize: 1.9rem;
-    font-family: 'Lato';
-
-}
-
-p{
-    margin: 0px;
-    font-family: 'Lato';
-    font-size: 16px;
-    
-}
-
-nav{
-    height: 60px;
-    background-color: var(--OMEGA);
-    position: block;
-    top: 0;
-    width: 100%;
-    transition: background-color 200ms linear;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+nav {
+	border-bottom: 1px solid var(--ALPHA);
 }
 
 blockquote {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    direction: rtl;
-    font-family: 'KFGQPC Uthmanic Script HAFS';
-    font-size: var(--arabicFontSize);
-    background-color: var(--OMEGA);
-    color: var(--BETA);
-    padding: 10px 20px 15px;
-    border-radius: 5px;
-    margin: 0px;
-    text-align: right;
-    transition: color 200ms linear, background-color 200ms linear;
-    width: fit-content;
-    justify-self: center;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	direction: rtl;
+	font-family: 'KFGQPC Uthmanic Script HAFS';
+	font-size: var(--arabicFontSize);
+	background-color: var(--OMEGA);
+	color: var(--BETA);
+	padding: 10px 20px 15px;
+	border-radius: 5px;
+	margin: 0px;
+	text-align: right;
+	transition: color 200ms linear, background-color 200ms linear;
+	width: fit-content;
+	justify-self: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Lato';
+	color: var(--BETA);
+	text-align: left;
+	font-weight: 900;
+	margin-block-start: 0.5rem;
+	margin-block-end: 0.5rem;
 }
 
-h1{
-    font-family: 'Lato';
+h1 {
+	font-size: 2.5rem;
+}
+h2 {
+	font-size: 2.5rem;
+	font-weight: 700;
+}
+h3 {
+	font-size: 1.9rem;
+	font-weight: 900;
+}
+h4 {
+	font-size: 1.9rem;
+	font-weight: 700;
+}
+h5 {
+	font-size: 1.3rem;
+	font-weight: 900;
+}
+h6 {
+	font-size: 1.3rem;
+	font-weight: 700;
+}
+
+header > div,
+aside > div {
+	padding: 34px 16px 32px;
+}
+
+nav > .container,
+aside > .container,
+main > .container,
+header > .container,
+section > .container,
+footer > .container {
+	margin: 0 auto;
+	max-width: 1160px;
+}
+
+/* LIST DETAULTS */
+li {
+	/*👉display: list-item;
+    text-align: match-parent;👈*/
+	cursor: unset;
+}
+ol {
+	/*👉display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    list-styletype: decimal;
+    margin-inline-start: 0;
+    margin-inline-end: 0;👈*/
+	cursor: unset;
+}
+ul {
+	/*👉display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    list-styletype: disc;
+    margin-inline-start: 0;
+    margin-inline-end: 0;👈*/
+	cursor: unset;
+}
+
+/* LINK AND BUTTON DEFAULTS */
+a {
+	color: #005987;
+	font-size: 500;
+	/*👉color: #0000EE;
+    text-decoration: underline;
+    cursor: pointer;
+    text-decoration: underline;
+    cursor: auto;👈*/
+}
+a:link {
+	/*👉color: (internal value);
+    text-decoration: underline;
+    cursor: auto;👈*/
+	cursor: unset;
+}
+a:visited {
+	/* color: #551A8B;
+    text-decoration: underline;
+    cursor: auto; */
+	cursor: unset;
+}
+a:link:active {
+	/*👉color: #FF0000;👈*/
+	cursor: unset;
+}
+a:visited:active {
+	/*👉color: (internal value);👈*/
+	cursor: unset;
+}
+button {
+	/*👉letter-spacing: initial;
+    word-spacing: initial;
+    line-height: initial;
+    text-transform: initial;
+    text-indent: initial;
+    text-shadow: initial;
     text-align: center;
-    margin-top: 40px;
+    display: inline-block;
+    box-sizing: border-box;
+    align-items: flex-start;
+    text-align: start;
+    cursor: default;
+    box-sizing: border-box;
+    padding: 2px 6px 3px 6px;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0;
+    text-shadow: none;
+    display: inline-block;👈*/
+	background: none;
+	border: none;
+	padding: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 40px;
+	border-radius: 20px;
+	z-index: 1;
+	cursor: pointer;
+	gap: 6px;
+}
+button:active {
+	transform: scale(90%);
+	transition: transform 200ms linear;
+}
+button:disabled {
+	border: none;
+	cursor: not-allowed;
+	opacity: 25%;
+	filter: grayscale(1);
+}
+button:hover:enabled {
+	backdrop-filter: invert(0.1);
+	transition: backdrop-filter 100ms linear;
+}
+button svg {
+	width: 16px;
+}
+
+iframe {
+	/*👉border: 2px inset👈*/
+	cursor: unset;
+}
+table {
+	/*👉display: table;
+    box-sizing: border-box;
+    border-spacing: 2px;
+    border-collapse: separate;
+    text-indent: initial;
+    display: table;
+    border-spacing: 2px;
+    border-collapse: separate;
+    border-color: gray;👈*/
+	cursor: unset;
+}
+
+/* FORM DEAFAULTS */
+input[type='image'] {
+	/*👉box-sizing: border-box;
+    padding: initial;
+    background-color: initial;
+    border: initial;👈*/
+	cursor: unset;
+}
+input[type='radio'] {
+	/*👉box-sizing: border-box;
+    margin: 3px 0.5ex;
+    padding: initial;
+    background-color: initial;
+    border: initial;
+    box-sizing: border-box;👈*/
+	cursor: unset;
+}
+input[type='range'] {
+	/*👉padding: initial;
+    border: initial;
+    margin: 2px;
+    color: #909090;👈*/
+	cursor: unset;
+}
+
+/* drawer */
+.drawer[open] {
+	transform: translateX(000px);
+}
+
+.drawer {
+	transform: translateX(300px);
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 300px;
+	background-color: red;
+	z-index: 2;
+	transition: transform 200ms ease-out;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 8px 0px;
 }

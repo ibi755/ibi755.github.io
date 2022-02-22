@@ -1,78 +1,72 @@
-const collection = document.getElementsByClassName("grid");
-console.log(collection)
+// Hello! Welcome to my Javasript for the Ajjrumiyyah Learning Platform
+// This is the code that is universal to all pages
+// Each page can otherwise have its own Javascript as well
+console.log('java booted up!');
+
+// Maintains that every unit block has two columns split equally
+// by setting the number of rows to have the number of children
+const collection = document.getElementsByClassName('grid');
 for (let i = 0; i < collection.length; i++) {
-  let childCount = collection[i].childElementCount;
-  collection[i].setAttribute('style','grid-template-rows: repeat(' + Math.ceil(childCount/2) + ', 1fr)');
-  console.log('grid-template-rows: repeat(' + Math.ceil(childCount) + ', 1fr)')
+	collection[i].setAttribute(
+		'style',
+		'grid-template-rows: repeat(' +
+			Math.ceil(collection[i].childElementCount / 2) +
+			', 1fr)'
+	);
 }
 
+// Reads the theme stored in cookies if it exists
+changeToTheme(localStorage.getItem('theme'));
 
-
-let storedTheme = localStorage.getItem('theme');
-changeToTheme(storedTheme);
-
-
-
-console.log("java booted up!");
-function changeToTheme(theme){
-    document.body.setAttribute("theme", theme);
-    console.log('set theme to ' + theme + '!')
-    localStorage.setItem('theme', theme)
+// Defines how to change theme
+function changeToTheme(theme) {
+	document.body.setAttribute('theme', theme);
+	console.log('set theme to ' + theme + '!');
+	localStorage.setItem('theme', theme);
 }
 
-const lightButton = document.getElementById('lightButton');
-lightButton.addEventListener("click", () => changeToTheme("light"));
-
-const darkButton = document.getElementById('darkButton');
-darkButton.addEventListener('click', () => changeToTheme("dark"));
-
-const sepiaButton = document.getElementById('sepiaButton');
-sepiaButton.addEventListener('click', () => changeToTheme("sepia"));
-
-const hafsButton = document.getElementById('hafsButton');
-hafsButton.addEventListener('click', () => changeToTheme("hafs"));
-
-const fontUpper = document.getElementById('plus');
-const fontDowner = document.getElementById('minus');
-
-
-
-fontUpper.addEventListener('click', () => incrementFont(1));
-fontDowner.addEventListener('click', () => incrementFont(-1));
-
-
-function incrementFont(amount){
-    let font = parseInt(document.getElementById('font').innerHTML);
-    if (Number(amount)>0 && font<5) {
-         font++
-         console.log('Font Upped to ' + font + " aka " + font*0.5+1 + " rem")
-    } else if (Number(amount)<0 && font>1) {
-         font--
-         console.log('Font Downed to ' + font + " aka " + font*0.5+1 + " rem");
-     }
-    setFont(font);
+//Logic for the Arabic Font Changer
+function incrementFont(amount) {
+	let currentFont = parseInt(document.getElementById('font').innerHTML);
+	let targetFont = currentFont + Number(amount);
+	function setFont() {
+		document.getElementById('font').innerHTML = targetFont;
+		document.body.style.setProperty(
+			'--arabicFontSize',
+			targetFont * 0.3 + 1.3 + 'rem'
+		);
+	}
+	switch (targetFont) {
+		case 6:
+		case 0:
+			break;
+		case 5:
+			document.getElementById('plus').setAttribute('disabled', '');
+			setFont();
+			break;
+		case 1:
+			document.getElementById('minus').setAttribute('disabled', '');
+			setFont();
+			break;
+		case 4:
+			document.getElementById('plus').removeAttribute('disabled', '');
+			setFont();
+			break;
+		case 2:
+			document.getElementById('minus').removeAttribute('disabled', '');
+		case 3:
+			setFont();
+			break;
+	}
 }
 
-function setFont(font){
-    document.getElementById("font").innerHTML = font;  
-    document.body.style.setProperty("--arabicFontSize", font*0.3+1 + "rem");
-    switch (font){
-        case 1:
-            fontDowner.classList.add('kill');
-            console.log('- disappear');
-            break
-        case 2:
-            fontDowner.classList.remove('kill');
-            console.log('- appear');
-            break
-        case 4:
-            fontUpper.classList.remove('kill');
-            console.log('+ appear');
-            break
-        case 5:
-            fontUpper.classList.add('kill');
-            console.log('+ disappear');
-    } 
+// To toggle whether the setting drawer appears or disappears
+function toggleDrawer() {
+	let drawer = document.getElementsByClassName('drawer')[0];
+	let drawerState = drawer.hasAttribute('open');
+	if (drawerState) {
+		drawer.removeAttribute('open');
+	} else {
+		drawer.setAttribute('open', '');
+	}
 }
-
-console.log(localStorage.cat)
