@@ -9,7 +9,7 @@ Each page otherwise has its own stile sheet and manual overrides👈*/
 	font-family: 'KFGQPC Uthmanic Script Hafs';
 	font-style: normal;
 	font-weight: 400;
-	src: url(/FONTS/KFGQPC\ Uthmanic\ Script\ HAFS\ Regular.otf) format('otf');
+	src: url("http://db.onlinewebfonts.com/t/2c1ce06a505728976c1d2993407312b5.woff2") format("woff2"), url('/FONTS/KFGQPC\ Uthmanic\ Script\ HAFS\ Regular.otf') format('otf');
 }
 
 @font-face {
