@@ -4,6 +4,14 @@ Each page otherwise has its own stile sheet and manual overrides👈*/
 
 /* UNIVERSAL FONTS */
 @import url('https://db.onlinewebfonts.com/c/2c1ce06a505728976c1d2993407312b5?family=KFGQPC+Uthmanic+Script+HAFS');
+
+@font-face {
+	font-family: 'KFGQPC Uthmanic Script Hafs';
+	font-style: normal;
+	font-weight: 400;
+	src: url(/FONTS/KFGQPC\ Uthmanic\ Script\ HAFS\ Regular.otf) format('otf');
+}
+
 @font-face {
 	font-family: 'Lato';
 	font-style: normal;
@@ -147,7 +155,7 @@ blockquote {
 	align-items: center;
 	flex-wrap: wrap;
 	direction: rtl;
-	font-family: 'KFGQPC Uthmanic Script HAFS';
+	font-family: 'KFGQPC Uthmanic Script Hafs';
 	font-size: var(--arabicFontSize);
 	background-color: var(--OMEGA);
 	color: var(--BETA);

@@ -15,6 +15,7 @@ for (let i = 0; i < collection.length; i++) {
 	);
 }
 
+changeToTheme('sepia');
 // Reads the theme stored in cookies if it exists
 changeToTheme(localStorage.getItem('theme'));
 
