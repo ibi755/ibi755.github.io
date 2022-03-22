@@ -1,0 +1,105 @@
+/*👉Welcome to my css for the Ajrumiyyah Learning Platform
+Below are the default styles that are used across all pages
+Each page otherwise has its own stile sheet and manual overrides👈*/
+
+/* UNIVERSAL FONTS */
+@import url('https://db.onlinewebfonts.com/c/2c1ce06a505728976c1d2993407312b5?family=KFGQPC+Uthmanic+Script+HAFS');
+
+@font-face {
+    font-family: 'Graphik web';
+    src: url('https://assets.website-files.com/5e2755779d8b8ea1d6373797/5e2761fd54876406a0210838_Graphik-Regular-Web.woff2') format('woff2'), url('https://assets.website-files.com/5e2755779d8b8ea1d6373797/5e2761fd348295010a0ca94d_Graphik-Regular-Web.eot') format('embedded-opentype'), url('https://assets.website-files.com/5e2755779d8b8ea1d6373797/5e2761fd5487644b31210839_Graphik-Regular-Web.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'Graphik web';
+    src: url('https://assets.website-files.com/5e2755779d8b8ea1d6373797/5e2761fd997b9667abf8898f_Graphik-RegularItalic-Web.woff2') format('woff2'), url('https://assets.website-files.com/5e2755779d8b8ea1d6373797/5e2761fd9d8b8e8fff37cc8e_Graphik-RegularItalic-Web.eot') format('embedded-opentype'), url('https://assets.website-files.com/5e2755779d8b8ea1d6373797/5e2761fd8e5e9e1f5a28a0c1_Graphik-RegularItalic-Web.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'Graphik web';
+    src: url('https://assets.website-files.com/5e2755779d8b8ea1d6373797/5e2761fd2c83a24900ce156a_Graphik-Medium-Web.woff2') format('woff2'), url('https://assets.website-files.com/5e2755779d8b8ea1d6373797/5e2761fd2c83a27738ce1569_Graphik-Medium-Web.eot') format('embedded-opentype'), url('https://assets.website-files.com/5e2755779d8b8ea1d6373797/5e2761fd9d8b8e0fe337cc8d_Graphik-Medium-Web.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'Graphik web';
+    src: url('https://assets.website-files.com/5e2755779d8b8ea1d6373797/5e2761fd1c1a5456927d2bb7_Graphik-MediumItalic-Web.woff2') format('woff2'), url('https://assets.website-files.com/5e2755779d8b8ea1d6373797/5e2761fd8e5e9ec84028a0bf_Graphik-MediumItalic-Web.eot') format('embedded-opentype'), url('https://assets.website-files.com/5e2755779d8b8ea1d6373797/5e2761fddb51f66b46d5b1d6_Graphik-MediumItalic-Web.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: auto;
+}
+
+
+@font-face {
+	font-family: 'KFGQPC Uthmanic Script Hafs';
+	font-style: normal;
+	font-weight: 400;
+		src: url("http://db.onlinewebfonts.com/t/2c1ce06a505728976c1d2993407312b5.eot"); /* IE9*/
+		src: url("http://db.onlinewebfonts.com/t/2c1ce06a505728976c1d2993407312b5.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+		url("http://db.onlinewebfonts.com/t/2c1ce06a505728976c1d2993407312b5.woff2") format("woff2"), /* chrome firefox */
+		url("http://db.onlinewebfonts.com/t/2c1ce06a505728976c1d2993407312b5.woff") format("woff"), /* chrome firefox */
+		url("http://db.onlinewebfonts.com/t/2c1ce06a505728976c1d2993407312b5.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+		url("http://db.onlinewebfonts.com/t/2c1ce06a505728976c1d2993407312b5.svg#KFGQPC Uthmanic Script HAFS") format("svg"); /* iOS 4.1- */
+	
+	src: url("http://db.onlinewebfonts.com/t/2c1ce06a505728976c1d2993407312b5.woff2") format("woff2"), url('/FONTS/KFGQPC\ Uthmanic\ Script\ HAFS\ Regular.otf') format('otf');
+}
+
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Lato Regular'), local('Lato-Regular'),
+		url(https://cdn.kastatic.org/fonts/lato/Lato-Regular.woff2) format('woff2');
+}
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Lato Bold'), local('Lato-Bold'),
+		url(https://cdn.kastatic.org/fonts/lato/Lato-Bold.woff2) format('woff2');
+}
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 900;
+	src: local('Lato Black'), local('Lato-Black'),
+		url(https://cdn.kastatic.org/fonts/lato/Lato-Black.woff2) format('woff2');
+}
+:root{
+	font-family: 'Graphik web';
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.3;
+}
+
+
+body{
+	margin: unset;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-weight: 500;
+	margin-block-start: unset;
+	margin-block-end: 0.7em;
+}
+
+h4, h5, h6{
+	font-family: 'KFGQPC Uthmanic Script Hafs';
+	font-weight: 600;
+}
+
+h1{font-size: 50px;}
+h2{font-size: 24px;}
+h3{font-size: 19px;}
+h4{font-size: 50px;}
+h5{font-size: 30px;}
+h6{font-size: 24px;}
+
